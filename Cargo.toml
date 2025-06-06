@@ -1,12 +1,12 @@
 [package]
-name = "shared_cell"
+name = "revel_cell"
 version = "0.1.0"
 edition = "2024"
 authors = ["aurorax-neo"]
-description = "shared_cell"
+description = "revel_cell"
 license = "LICENSE"
-repository = "https://github.com/aurorax-neo/shared_cell"
-documentation = "https://docs.rs/shared_cell"
+repository = "https://github.com/aurorax-neo/revel_cell"
+documentation = "https://docs.rs/revel_cell"
 keywords = ["arc", "unsafe", "cell"]
 categories = []
 readme = "README.md"

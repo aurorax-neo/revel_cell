@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "shared_cell"
+name = "revel_cell"
 version = "0.1.0"
