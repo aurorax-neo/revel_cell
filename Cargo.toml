@@ -1,0 +1,18 @@
+[package]
+name = "shared_cell"
+version = "0.1.0"
+edition = "2024"
+authors = ["aurorax-neo"]
+description = ""
+license = ""
+repository = "https://github.com/aurorax-neo/shared_cell"
+documentation = "https://docs.rs/shared_cell"
+keywords = ["arc", "unsafe", "cell"]
+categories = []
+readme = "README.md"
+
+[dependencies]
+
+[features]
+default = []
+thread-safe = []
