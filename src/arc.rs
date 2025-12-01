@@ -26,9 +26,14 @@ impl<T: 'static> Arc<T> {
     pub fn inner_ptr(&self) -> *const UnsafeCell<T> {
         std::sync::Arc::as_ptr(&self.0)
     }
+
     pub fn from_raw(ptr: *const UnsafeCell<T>) -> Arc<T> {
         let arc = unsafe { std::sync::Arc::from_raw(ptr) };
         Arc(arc)
+    }
+
+    pub fn value(&self) -> &T {
+        unsafe { &*self.0.get() }
     }
 
     pub fn set_value(&self, value: T) {
@@ -36,6 +41,9 @@ impl<T: 'static> Arc<T> {
             let inner = &mut *self.0.get();
             *inner = value;
         }
+    }
+    pub fn value_mut(&self) -> &mut T {
+        unsafe { &mut *self.0.get() }
     }
 
     pub fn strong_count(&self) -> usize {
