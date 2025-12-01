@@ -30,6 +30,14 @@ impl<T: 'static> Arc<T> {
         let arc = unsafe { std::sync::Arc::from_raw(ptr) };
         Arc(arc)
     }
+
+    pub fn set_value(&self, value: T) {
+        unsafe {
+            let inner = &mut *self.0.get();
+            *inner = value;
+        }
+    }
+
     pub fn strong_count(&self) -> usize {
         std::sync::Arc::strong_count(&self.0)
     }
